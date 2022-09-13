@@ -1,0 +1,6 @@
+#Notations
+
+
+
+
+HOLA ESTE ES MI PRIMER README
