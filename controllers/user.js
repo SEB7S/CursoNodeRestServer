@@ -14,8 +14,8 @@ const getUser = async (req, res = response) => {
 }
 /* PUT */
 const putUser = async (req, res = response) => {
-    const id = req.params;
-    const { _id, password, google, ...user } = req.body;
+    const { id } = req.params;
+    const { _id, password, google, email, ...user } = req.body;
     if (password) {
         //Encriptar Password 
         const salt = bcryptjs.genSaltSync(); // Dificulta de encriptacion

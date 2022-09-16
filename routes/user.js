@@ -7,7 +7,7 @@ const { isValidRole, isEmailDB, isUserDB } = require('../helpers/db-validators')
 const router = Router();
 //Definiendo rutas y validaciones antes de acceder al modulo
 router.get('/', getUser);
-router.put('/:id', [check('id', 'invalid id').isMongoId(), check('id').custom(isUserDB), check('role').custom(isValidRole), validateFields
+router.put('/:id', [check('id', 'invalid id').isMongoId(), check('id').custom( isUserDB ), check('role').custom(isValidRole), validateFields
 ], putUser)
 router.post('/', [
     check('password').isLength({ min: 6 }),

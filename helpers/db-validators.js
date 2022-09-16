@@ -18,10 +18,12 @@ const isEmailDB = async (email = '') => {
     }
 }
 
-const isUserDB = async (id) => {
-    const checkUser = await User.findById( id );
-    if (!checkUser) {
-        throw new Error(`Id dont exist ${id}`);
+const isUserDB = async( id ) => {
+
+    // Verificar si el usuario existe
+    const checkUser = await User.findById(id);
+    if ( !checkUser ) {
+        throw new Error(`El id no existe ${ id }`);
     }
 }
 
