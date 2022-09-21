@@ -41,13 +41,14 @@ const postUser = async (req, res = response) => {
 /* DELETE */
 const deleteUser = async (req, res = response) => {
     const {id} = req.params;
+    const userLogin = req.user
     //Para Borrar Fisicamente
    /*  const user = await User.findByIdAndDelete(id); */
    //Eliminar Cambiando 'status' del usuario de
    const user = await User.findByIdAndUpdate(id, {status:false});
 
 
-    res.json({ msg: 'Delete Api Controller', user });
+    res.json({ msg: 'Delete Api Controller', user, userLogin });
 }
 
 module.exports = { getUser, putUser, postUser, deleteUser };
